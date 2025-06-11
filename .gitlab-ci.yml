@@ -1,0 +1,42 @@
+image: eclipse-temurin:17-jdk-jammy
+
+stages:
+  - build
+  - test
+
+cache:
+  key: "$CI_COMMIT_REF_NAME"
+  paths:
+    - .m2/repository/
+
+before_script:
+  - echo "Checking Java version..."
+  - java -version
+  - echo "Installing Maven..."
+  - apt-get update -y
+  - apt-get install -y maven
+  - mvn -version
+  - mkdir -p .m2
+
+build:
+  stage: build
+  script:
+    - echo "Building Maven project..."
+    - cd SafariGame
+    - mvn clean install -DskipTests=true  # <--- Notice: direct here
+  artifacts:
+    paths:
+      - SafariGame/target/
+    expire_in: 1 week
+
+test:
+  stage: test
+  script:
+    - echo "Running Maven tests..."
+    - cd SafariGame
+    - mvn test
+  allow_failure: true
+  artifacts:
+    paths:
+      - SafariGame/target/surefire-reports/
+    expire_in: 1 week

@@ -1,0 +1,25 @@
+w-straight wall
+a-for one cut  (;-)
+s-for second cut (-;)
+l - for line wall (l)
+
+for-plants
+
+b - bush
+p - plant
+h - big bush
+
+
+
+for-roads;
+
+r - for horizontal straight road.
+| - for vertical straight road.
+1 - for road shape right down
+2 - for road shape right up
+3 - for road shape left up
+4 - for road shape left down
+
+
+D - for River
+H - for Hill

@@ -1,0 +1,5 @@
+# Created at 2025-05-19T12:50:46.323
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Software Technology\curr\e3-vision\SafariGame\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
